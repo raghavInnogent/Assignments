@@ -1,0 +1,237 @@
+/* ====== Global Styles ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #eef2f3, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  color: #333;
+}
+
+/* ====== App Container ====== */
+.app-root {
+  background-color: #fff;
+  width: 100%;
+  max-width: 700px; /* 🔹 widened from 520px */
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ====== Header ====== */
+header {
+  background: linear-gradient(135deg, #ff8c00);
+  color: #fff;
+  padding: 32px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ====== Main ====== */
+main {
+  padding: 32px; /* 🔹 more space */
+}
+
+/* ====== Todo Form ====== */
+.todo-form {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.todo-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.todo-form button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.todo-form button:hover {
+  background: #005fcc;
+}
+
+/* ====== Todo List ====== */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* 🔹 more gap between items */
+}
+
+/* ====== Todo Item ====== */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px; /* 🔹 more padding */
+  border-radius: 14px;
+  background: #fdfdfd;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.todo-item:hover {
+  background: #f4f8ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.15);
+}
+
+/* subtle left accent line */
+.todo-item::before {
+  content: "";
+  width: 5px;
+  height: 70%;
+  background: #007bff;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 15%;
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+.todo-item:hover::before {
+  opacity: 1;
+  height: 100%;
+  top: 0;
+}
+
+/* ====== Todo Text / Input ====== */
+.todo-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.todo-main span {
+  font-size: 1.05rem;
+  color: #222;
+  word-break: break-word;
+}
+
+.todo-main input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1.05rem;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.todo-main input:focus {
+  border-color: #007bff;
+}
+
+/* ====== Buttons ====== */
+.todo-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-buttons button {
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+/* button colors */
+.edit-btn {
+  background: #ffc107;
+  color: #333;
+}
+.edit-btn:hover {
+  background: #e0a800;
+}
+
+.save-btn {
+  background: #28a745;
+  color: #fff;
+}
+.save-btn:hover {
+  background: #218838;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: #fff;
+}
+.cancel-btn:hover {
+  background: #5a6268;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+}
+.delete-btn:hover {
+  background: #c82333;
+}
+
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #777;
+  background: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ====== Animation ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
