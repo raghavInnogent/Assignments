@@ -1,0 +1,87 @@
+.home-container {
+  padding: 20px;
+  background-color: #f9fafc;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Page title */
+.home-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 🔽 Dropdown wrapper styling */
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dropdown {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 220px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover {
+  border-color: #0d6efd;
+  box-shadow: 0 3px 6px rgba(13, 110, 253, 0.2);
+}
+
+.selected-text {
+  text-align: center;
+  font-size: 16px;
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* ✅ Perfect 4-card grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ✅ Responsive layouts */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dropdown {
+    width: 180px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown {
+    width: 160px;
+    font-size: 14px;
+  }
+}
