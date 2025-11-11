@@ -1,0 +1,143 @@
+.order-container { 
+  padding: 40px;
+  background-color: #f9fafc;
+  min-height: 100vh;
+}
+
+.order-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 0;
+}
+
+.order-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  overflow: visible; /* ✅ allow dropdown outside */
+  z-index: 1;
+}
+
+.order-card:hover {
+  transform: scale(1.01);
+  z-index: 5;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Dropdown wrapper */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+/* Button */
+.dropdown-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  position: relative;
+  z-index: 11;
+}
+
+.dropdown-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown list — anchored to bottom-left of button */
+.item-list {
+  position: absolute;
+  top: calc(100% + 8px); /* just below the button */
+  right: 0;              /* open towards left */
+  transform-origin: top right;
+  width: max-content;
+  min-width: 180px;
+  max-width: 90vw;
+  margin: 0;
+  padding: 10px;
+  background-color: #f1f3f5;
+  border-radius: 8px;
+  list-style: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  animation: fadeIn 0.16s ease-in-out;
+  max-height: 240px;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+
+/* Dropdown items */
+.item {
+  white-space: normal;
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+/* Arrow (aligned to right bottom of button) */
+.item-list::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background-color: #f1f3f5;
+  box-shadow: -3px -3px 6px rgba(0, 0, 0, 0.03);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-empty {
+  color: #666;
+  font-style: italic;
+}
+
+.order-status {
+  font-weight: 600;
+}
+
+.order-status.delivered {
+  color: #28a745;
+}
+
+.order-status.in-transit {
+  color: #ffc107;
+}
+
+.order-status.cancelled {
+  color: #dc3545;
+}
